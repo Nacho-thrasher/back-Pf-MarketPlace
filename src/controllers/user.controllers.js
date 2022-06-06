@@ -33,33 +33,7 @@ const createUser = async (req, res) => {
         await user.addRols(roles);
 
         user.password = undefined;
-        //? enviar email de confirmacion de registro
-        // const transporter = nodemailer.createTransport({
-        //     service: 'gmail',
-        //     auth: {
-        //         user: 'nachoburgos1995@gmail.com',
-        //         pass: 'mtlsdatewtbcwhbf'
-        //     }
-        // });
-        // const mailOptions = {
-        //     from: "SevenDevsNfts <",
-        //     to: usuario.email,
-        //     subject: 'Confirmation of registration',
-        //     text: 'Hello ' + usuario.firstName + ' ' + usuario.lastName + '\n\n' +
-        //         'Thank you for registering on SevenDevsNfts.\n' +
-        //         'To confirm your registration, please click on the following link:\n\n' +
-        //         'http://localhost:3000/confirmar/' + usuario._id + '\n\n' +
-        //         "If it doesn't work, copy and paste the link into your browser.\n\n" +
-        //         'Thank you,\n' +
-        //         'SevenDevsNfts'
-        // };
-        // transporter.sendMail(mailOptions, function (error, info) {
-        //     if (error) {
-        //         console.log(error);
-        //     } else {
-        //         console.log('Email sent: ' + info.response);
-        //     }
-        // });
+        
         //? generar jwt
         const token = await generateJwt(user.idUser);
 
