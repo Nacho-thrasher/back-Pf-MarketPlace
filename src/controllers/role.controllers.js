@@ -4,6 +4,8 @@ const { Rol } = require("../db");
 const createRole = async (req, res) => {
     const { name, description } = req.body;
     try {
+
+        
         const role = await Rol.create({
             name,
             description
